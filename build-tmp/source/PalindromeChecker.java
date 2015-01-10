@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class PalindromeChecker extends PApplet {
+
 public void setup()
 {
   String lines[] = loadStrings("palindromes.txt");
@@ -22,7 +38,9 @@ public boolean palindrome(String word)
     if(p_str.charAt(i) != p_str.charAt(p_str_len-(i+1))){
       return false;
     }
+
   }
+
   return true;
 }
 
@@ -43,4 +61,13 @@ public String onlyLetters(String sString){
     } else {  }
   }
   return outstr;
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "PalindromeChecker" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }

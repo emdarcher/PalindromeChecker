@@ -38,9 +38,7 @@ public boolean palindrome(String word)
     if(p_str.charAt(i) != p_str.charAt(p_str_len-(i+1))){
       return false;
     }
-
   }
-
   return true;
 }
 
